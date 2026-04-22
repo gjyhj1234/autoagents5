@@ -84,9 +84,13 @@ public static class BrowserScripts
                 const ta = form.querySelector('textarea');
                 if (!ta || ta.disabled) return false;
                 // Set value and fire native input/change events
-                const nativeSetter = Object.getOwnPropertyDescriptor(
-                    window.HTMLTextAreaElement.prototype, 'value').set;
-                nativeSetter.call(ta, '{{escaped}}');
+                const descriptor = Object.getOwnPropertyDescriptor(
+                    window.HTMLTextAreaElement.prototype, 'value');
+                if (descriptor && descriptor.set) {
+                    descriptor.set.call(ta, '{{escaped}}');
+                } else {
+                    ta.value = '{{escaped}}';
+                }
                 ta.dispatchEvent(new Event('input', { bubbles: true }));
                 ta.dispatchEvent(new Event('change', { bubbles: true }));
                 // Find and click submit button

@@ -37,9 +37,11 @@ internal class WebView2BrowserBridge : IBrowserBridge
         // Navigation completed
         _webView.CoreWebView2.NavigationCompleted += CoreWebView2_NavigationCompleted;
 
-        // XHR interception: register response filter for GitHub API calls
+        // XHR interception: register response filter for GitHub API calls (both XHR and Fetch)
         _webView.CoreWebView2.AddWebResourceRequestedFilter("https://github.com/*", CoreWebView2WebResourceContext.XmlHttpRequest);
+        _webView.CoreWebView2.AddWebResourceRequestedFilter("https://github.com/*", CoreWebView2WebResourceContext.Fetch);
         _webView.CoreWebView2.AddWebResourceRequestedFilter("https://api.github.com/*", CoreWebView2WebResourceContext.XmlHttpRequest);
+        _webView.CoreWebView2.AddWebResourceRequestedFilter("https://api.github.com/*", CoreWebView2WebResourceContext.Fetch);
         _webView.CoreWebView2.WebResourceResponseReceived += CoreWebView2_WebResourceResponseReceived;
     }
 

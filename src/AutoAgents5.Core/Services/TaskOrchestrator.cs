@@ -41,7 +41,7 @@ public class TaskOrchestrator
     private static readonly TimeSpan InspectTimeout = TimeSpan.FromSeconds(60);
     private static readonly TimeSpan EndMarkerTimeout = TimeSpan.FromSeconds(120);
     private static readonly TimeSpan CreatePrTimeout = TimeSpan.FromMinutes(15);
-    private static readonly TimeSpan CreatePrReloadAt = TimeSpan.FromMinutes(5);
+    private static readonly TimeSpan CreatePrReloadAfter = TimeSpan.FromMinutes(5);
     private static readonly TimeSpan MergeButtonTimeout = TimeSpan.FromMinutes(10);
     private static readonly TimeSpan MergePollInterval = TimeSpan.FromSeconds(20);
     private static readonly TimeSpan HeartbeatInterval = TimeSpan.FromMinutes(5);
@@ -166,8 +166,8 @@ public class TaskOrchestrator
             var genericType = "(function() {" +
                 "const ta = document.querySelector('textarea');" +
                 "if (!ta || ta.disabled) return false;" +
-                "const nativeSetter = Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype, 'value').set;" +
-                $"nativeSetter.call(ta, {serializedText});" +
+                "const desc = Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype, 'value');" +
+                $"if (desc && desc.set) {{ desc.set.call(ta, {serializedText}); }} else {{ ta.value = {serializedText}; }}" +
                 "ta.dispatchEvent(new Event('input', { bubbles: true }));" +
                 "ta.dispatchEvent(new Event('change', { bubbles: true }));" +
                 "return true;" +
@@ -480,7 +480,7 @@ public class TaskOrchestrator
             }
 
             // 5 min mark: reload once
-            if (!reloadDone && DateTime.UtcNow - (deadline - CreatePrTimeout) >= CreatePrReloadAt)
+            if (!reloadDone && DateTime.UtcNow - (deadline - CreatePrTimeout) >= CreatePrReloadAfter)
             {
                 _logger.Info(OrchestratorState.CreatePR, "Create pull request 按钮 5 分钟未可用，Reload 一次");
                 await ReloadAndWaitAsync(ct);
