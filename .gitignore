@@ -1,0 +1,35 @@
+# .NET build outputs
+bin/
+obj/
+*.user
+*.suo
+*.vs/
+.vs/
+
+# .NET publish outputs
+publish/
+out/
+
+# Test results
+TestResults/
+*.trx
+*.coverage
+
+# Logs (R-Logging: must not be committed)
+logs/
+
+# WebView2 persistent user data (contains login cookies - MUST NOT commit)
+**/WebView2UserData/
+**/AutoAgents5/WebView2/
+
+# NuGet
+*.nupkg
+.nuget/
+
+# Rider / VS Code
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db

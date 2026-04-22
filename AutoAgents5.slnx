@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/AutoAgents5.App/AutoAgents5.App.csproj" />
+    <Project Path="src/AutoAgents5.Core/AutoAgents5.Core.csproj" />
+    <Project Path="src/AutoAgents5.Tests/AutoAgents5.Tests.csproj" />
+  </Folder>
+</Solution>
