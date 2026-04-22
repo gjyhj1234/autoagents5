@@ -1,0 +1,15 @@
+{
+    "files": [
+        {
+            "path": "simulate_agent_error.py",
+            "additions": 268,
+            "deletions": 0,
+            "changes": 268,
+            "status": "A",
+            "path_digest": "972df5f8de1b73c79373a64ae6ae99387ea1b205929b44cf155e1fa6f4d00d0c"
+        }
+    ],
+    "additions": 268,
+    "deletions": 0,
+    "changes": 268
+}
