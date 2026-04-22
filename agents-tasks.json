@@ -1,0 +1,100 @@
+{
+    "tasks": [
+        {
+            "agent_collaborators": [
+                {
+                    "agent_id": 1143301,
+                    "agent_task_id": "6868698-1217528841-e0e89255-fac7-4f8f-b89f-7c1d7d612ed6",
+                    "agent_type": "Integration",
+                    "slug": "copilot-developer"
+                }
+            ],
+            "archived_at": null,
+            "artifacts": [
+                {
+                    "data": {
+                        "base_ref": "main",
+                        "head_ref": "copilot/simulate-agent-task-error"
+                    },
+                    "provider": "github",
+                    "type": "branch"
+                }
+            ],
+            "created_at": "2026-04-22T01:49:02.292340504Z",
+            "creator": {
+                "id": 6868698,
+                "login": "gjyhj1234",
+                "node_id": "MDQ6VXNlcjY4Njg2OTg=",
+                "url": "https://github.com/gjyhj1234"
+            },
+            "creator_type": "user",
+            "html_url": "https://github.com/gjyhj1234/autoagents5/tasks/c0de5caf-1f2e-4745-8560-bc56f550dafb",
+            "id": "c0de5caf-1f2e-4745-8560-bc56f550dafb",
+            "name": "Simulating an error in agents task execution",
+            "owner": {
+                "id": 6868698
+            },
+            "remote_steerable": true,
+            "repository": {
+                "id": 1217528841
+            },
+            "session_count": 1,
+            "state": "in_progress",
+            "status": "in_progress",
+            "updated_at": "2026-04-22T01:50:54.366122686Z",
+            "url": "https://api.github.com/agents/repos/gjyhj1234/autoagents5/tasks/c0de5caf-1f2e-4745-8560-bc56f550dafb",
+            "user_collaborators": [
+                6868698
+            ]
+        },
+        {
+            "agent_collaborators": [
+                {
+                    "agent_id": 1143301,
+                    "agent_task_id": "6868698-1217528841-e9141b68-2b1e-4908-9168-f303023f0905",
+                    "agent_type": "Integration",
+                    "slug": "copilot-developer"
+                }
+            ],
+            "archived_at": null,
+            "artifacts": [
+                {
+                    "data": {
+                        "base_ref": "main",
+                        "head_ref": "copilot/add-test-file"
+                    },
+                    "provider": "github",
+                    "type": "branch"
+                }
+            ],
+            "created_at": "2026-04-22T01:43:56.392133303Z",
+            "creator": {
+                "id": 6868698,
+                "login": "gjyhj1234",
+                "node_id": "MDQ6VXNlcjY4Njg2OTg=",
+                "url": "https://github.com/gjyhj1234"
+            },
+            "creator_type": "user",
+            "html_url": "https://github.com/gjyhj1234/autoagents5/tasks/fbfab046-d7f3-4c97-9dd7-34dc3e3ed14d",
+            "id": "fbfab046-d7f3-4c97-9dd7-34dc3e3ed14d",
+            "name": "Creating a test file with hello world",
+            "owner": {
+                "id": 6868698
+            },
+            "remote_steerable": true,
+            "repository": {
+                "id": 1217528841
+            },
+            "session_count": 1,
+            "state": "completed",
+            "status": "completed",
+            "updated_at": "2026-04-22T01:45:19.738196636Z",
+            "url": "https://api.github.com/agents/repos/gjyhj1234/autoagents5/tasks/fbfab046-d7f3-4c97-9dd7-34dc3e3ed14d",
+            "user_collaborators": [
+                6868698
+            ]
+        }
+    ],
+    "total_active_count": 2,
+    "total_archived_count": 0
+}
